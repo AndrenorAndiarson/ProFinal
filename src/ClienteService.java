@@ -34,13 +34,31 @@ ClienteDAO.leerClienteDB();
 
         ClienteDAO.eliminarCliente(nombreClienteAEliminar);
 
-        scanner.close();
     }
 
 
 
     public static void editarCliente(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escribe el nuevo nombre: ");
+        String nom= sc.nextLine();
+        System.out.println("Escribe el nuevo telefono: ");
+        String telf= sc.nextLine();
+        System.out.println("Escribe el nuevo direccion: ");
+        String dire= sc.nextLine();
+        System.out.println("Escribe el nuevo correo electronico: ");
+        String correo= sc.nextLine();
 
+        System.out.println("Indica el ID del cliente a editar: ");
+        int id_cli= sc.nextInt();
+        Cliente actuaCliente = new Cliente();
+        actuaCliente.setNombre(nom);
+        actuaCliente.setTelefono(telf);
+        actuaCliente.setDireccion(dire);
+        actuaCliente.setCorreoElectronico(correo);
+        actuaCliente.setId(id_cli);
+
+        ClienteDAO.actualizarCliente(actuaCliente);
     }
 
 }

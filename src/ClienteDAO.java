@@ -64,7 +64,7 @@ public class ClienteDAO {
                     if (filasAfectadas > 0) {
                         System.out.println("Cliente eliminado correctamente.");
                     } else {
-                        System.out.println("No se encontró el cliente con el nombre proporcionado.");
+                        System.out.println("No se encontro el cliente con el nombre proporcionado.");
                     }
                 }
             } catch (SQLException ex) {
@@ -74,11 +74,33 @@ public class ClienteDAO {
             System.out.println(e);
         }
     }
+    public static void actualizarCliente(Cliente cliente) {
+        Conexion db_connect = new Conexion();
 
-    public static void actualizarCliente(Cliente cliente){
+        try (Connection conexion = db_connect.get_conConnection()) {
+            try {
+                String query = "UPDATE `frigobas`.`cliente` SET `Nombre` = ?, `Telefono` = ?, `Direccion` = ?, `CorreoElectronico` = ? WHERE `id` = ?";
 
+                try (PreparedStatement ps = conexion.prepareStatement(query)) {
+                    ps.setString(1, cliente.getNombre());
+                    ps.setString(2, cliente.getTelefono());
+                    ps.setString(3, cliente.getDireccion());
+                    ps.setString(4, cliente.getCorreoElectronico());
+                    ps.setInt(5, cliente.getId());
 
+                    int filasAfectadas = ps.executeUpdate();
 
+                    if (filasAfectadas > 0) {
+                        System.out.println("Cliente actualizado correctamente.");
+                    } else {
+                        System.out.println("No se encontro el cliente con la ID proporcionada.");
+                    }
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
-
 }
