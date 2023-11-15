@@ -24,7 +24,7 @@ public class ClienteService {
         ClienteDAO.crearClienteDB(cliente);
     }
     public static void listarClientes(){
-
+ClienteDAO.leerClienteDB();
     }
     public static void eliminarCliente() {
         Scanner scanner = new Scanner(System.in);
