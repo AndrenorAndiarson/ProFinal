@@ -48,7 +48,7 @@ public class Main {
                     ClienteMenu.menuClientes();
                     break;
                 case 2:
-                    System.out.println("hola");
+                    EmpleadoMenu.menuEmpleados();
                     break;
                 case 3:
                     System.out.println("hola2");
@@ -64,39 +64,6 @@ public class Main {
         sc.close();
 
 
-    /*private static void menuEmpleados() {
-        Scanner scanner = new Scanner(System.in);
-        int opcionClientes;
 
-        do {
-            System.out.println("---  ***  ---");
-            System.out.println("MENU EMPLEADOS");
-            System.out.println("1- Crear empleado");
-            System.out.println("2- Listar empleados");
-            System.out.println("3- Editar empleado");
-            System.out.println("4- Eliminar empleado");
-            System.out.println("5- Volver al menu principal");
-
-            opcionClientes = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (opcionClientes) {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                default:
-                    System.out.println("Opcion no valida. Por favor, seleccione una opcion valida.");
-                    break;
-            }
-        } while (opcionClientes != 4);*/
     }
 }}
