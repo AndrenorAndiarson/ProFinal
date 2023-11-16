@@ -38,7 +38,7 @@ public class Main {
         } while (opcion != 4);{
         sc.close();
 
-
-
+//REVISAR CROOD//
+//https://es.stackoverflow.com/questions/482276/crud-en-un-segundo-formulario-java//
     }
 }}
