@@ -24,7 +24,7 @@ public class ClienteDAO {
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
-        } catch (SQLException e) {
+                 } catch (SQLException e) {
             System.out.println(e);
         }
     }

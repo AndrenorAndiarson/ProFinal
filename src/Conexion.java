@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public class Conexion {
     public Connection get_conConnection(){
+
         Connection conection = null;
         try {
             conection= DriverManager.getConnection("jdbc:mysql://localhost:3306/frigobas","root","");
