@@ -49,15 +49,15 @@ public class ClienteDAO {
             System.out.println(e);
         }
     }
-    public static void eliminarCliente(String nombreCliente) {
+    public static void eliminarCliente(int idCliente) {
         Conexion db_connect = new Conexion();
 
         try (Connection conexion = db_connect.get_conConnection()) {
             try {
-                String query = "DELETE FROM `frigobas`.`cliente` WHERE `Nombre` = ?";
+                String query ="DELETE FROM `frigobas`.`cliente` WHERE `id` = ?";
 
                 try (PreparedStatement ps = conexion.prepareStatement(query)) {
-                    ps.setString(1, nombreCliente);
+                    ps.setInt(1, idCliente);
 
                     int filasAfectadas = ps.executeUpdate();
 

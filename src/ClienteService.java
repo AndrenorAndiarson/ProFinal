@@ -29,10 +29,10 @@ ClienteDAO.leerClienteDB();
     public static void eliminarCliente() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el nombre del cliente que desea eliminar: ");
-        String nombreClienteAEliminar = scanner.nextLine();
+        System.out.print("Ingrese el id del cliente que desea eliminar: ");
+        int idClienteAEliminar = scanner.nextInt();
 
-        ClienteDAO.eliminarCliente(nombreClienteAEliminar);
+        ClienteDAO.eliminarCliente(idClienteAEliminar);
 
     }
 
