@@ -50,18 +50,18 @@ public static void listarProveedorDB(){
     }
 }
 
-    public static void eliminarProveedorDB(String nombreProveedor) {
+    public static void eliminarProveedorDB(int nombreProveedor) {
         Conexion db_connect = new Conexion();
         try (Connection conexion = db_connect.get_conConnection()) {
             try {
-                String query = "DELETE FROM `frigobas`.`proveedor` WHERE `Nombre` = ?";
+                String query = "DELETE FROM `frigobas`.`proveedor` WHERE `id` = ?";
                 try (PreparedStatement ps = conexion.prepareStatement(query)) {
-                    ps.setString(1, nombreProveedor);
+                    ps.setInt(1, nombreProveedor);
                     int filasAfectadas = ps.executeUpdate();
                     if (filasAfectadas > 0) {
                         System.out.println("Proveedor eliminado correctamente.");
                     } else {
-                        System.out.println("No se encontro el Proveedor con el nombre proporcionado.");
+                        System.out.println("No se encontro el Proveedor con el id proporcionado.");
                     }
                 }
             } catch (SQLException ex) {

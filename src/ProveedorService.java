@@ -32,8 +32,8 @@ public class ProveedorService {
     public static void eliminarProveedor() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el nombre del proveedor que desea eliminar: ");
-        String nombreProveedorAEliminar = scanner.nextLine();
+        System.out.print("Ingrese el id del proveedor que desea eliminar: ");
+        int nombreProveedorAEliminar = scanner.nextInt();
         ProveedorDAO.eliminarProveedorDB(nombreProveedorAEliminar);
     }
     public static void editarProveedor(){

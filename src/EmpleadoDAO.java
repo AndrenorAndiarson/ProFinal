@@ -64,22 +64,22 @@ public class EmpleadoDAO {
             System.out.println(e);
         }
     }
-    public static void eliminarEmpleado(String nombreEmpleado) {
+    public static void eliminarEmpleado(int nombreEmpleado) {
         Conexion db_connect = new Conexion();
 
         try (Connection conexion = db_connect.get_conConnection()) {
             try {
-                String query = "DELETE FROM `frigobas`.`empleado` WHERE `Nombre` = ?";
+                String query = "DELETE FROM `frigobas`.`empleado` WHERE `id` = ?";
 
                 try (PreparedStatement ps = conexion.prepareStatement(query)) {
-                    ps.setString(1, nombreEmpleado);
+                    ps.setInt(1, nombreEmpleado);
 
                     int filasAfectadas = ps.executeUpdate();
 
                     if (filasAfectadas > 0) {
                         System.out.println("Empleado eliminado correctamente.");
                     } else {
-                        System.out.println("No se encontro el empleado con el nombre proporcionado.");
+                        System.out.println("No se encontro el empleado con el id proporcionado.");
                     }
                 }
             } catch (SQLException ex) {

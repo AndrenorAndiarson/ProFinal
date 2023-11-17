@@ -39,8 +39,8 @@ public class EmpleadoService {
     public static void eliminarEmpleado() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el nombre del empleado que desea eliminar: ");
-        String nombreEmpleadoEliminar = scanner.nextLine();
+        System.out.print("Ingrese el id del empleado que desea eliminar: ");
+        int nombreEmpleadoEliminar = scanner.nextInt();
         EmpleadoDAO.eliminarEmpleado(nombreEmpleadoEliminar);
     }
 

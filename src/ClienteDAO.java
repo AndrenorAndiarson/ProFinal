@@ -64,7 +64,7 @@ public class ClienteDAO {
                     if (filasAfectadas > 0) {
                         System.out.println("Cliente eliminado correctamente.");
                     } else {
-                        System.out.println("No se encontro el cliente con el nombre proporcionado.");
+                        System.out.println("No se encontro el cliente con el id proporcionado.");
                     }
                 }
             } catch (SQLException ex) {
